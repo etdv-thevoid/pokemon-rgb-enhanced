@@ -1,0 +1,46 @@
+TitleMons:
+; mons on the title screen are randomly chosen from here
+IF DEF(_RED)
+	db CHARMANDER
+	db SQUIRTLE
+	db BULBASAUR
+	db WEEDLE
+	db NIDORAN_M
+	db KOFFING
+	db EKANS
+	db GROWLITHE
+	db ODDISH
+	db PSYDUCK
+	db STARYU
+ENDC
+IF DEF(_GREEN)
+	db BULBASAUR
+	db CHARMANDER
+	db SQUIRTLE
+	db CATERPIE
+	db NIDORAN_M
+	db GRIMER
+	db SANDSHREW
+	db VULPIX
+	db BELLSPROUT
+	db PSYDUCK
+	db STARYU
+ENDC
+IF DEF(_BLUE)
+	db SQUIRTLE
+	db BULBASAUR
+	db CHARMANDER
+	db WEEDLE
+	db NIDORAN_F
+	db GRIMER
+	db SANDSHREW
+	db VULPIX
+	db ODDISH
+	db SLOWPOKE
+	db SHELLDER
+ENDC
+	db PIDGEY
+	db PIKACHU
+	db CLEFAIRY
+	db JIGGLYPUFF
+	db EEVEE

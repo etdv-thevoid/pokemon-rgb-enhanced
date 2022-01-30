@@ -1,0 +1,74 @@
+name: "CI Build"
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - '.github/**'
+      - '**.md'
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - 'docs/**'
+      - '.github/**'
+      - '**.md'
+  workflow_call:
+
+jobs:
+  build-ubuntu:
+    name: "Build Ubuntu"
+    runs-on: ubuntu-latest
+    steps:
+      # CHECKOUT REPOSITORY
+      - id: checkout
+        name: "Checkout pokemon-rgb-enhanced"
+        uses: actions/checkout@v2.4.0
+        with:
+          submodules: recursive
+      - id: verify
+        name: "Verify latest"
+        run: |
+          if ! git diff-index --quiet HEAD --; then
+            echo 'Uncommitted changes detected:'
+            git diff-index HEAD --
+            return 1
+          fi
+      - name: Set environment variable
+        run: |
+          echo "SHORT_SHA=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
+
+      # INSTALL DEPENDENCIES
+      - id: apt-get
+        name: "Install build dependencies"
+        run: |
+          sudo apt-get install bison gcc git make python2 -y;
+      - id: rgbds
+        name: "Install rgbds v0.2.5"
+        run: |
+          git clone https://github.com/gbdev/rgbds --branch=v0.2.5 --depth=1
+          pushd rgbds
+          sudo make install
+          popd
+
+      # BUILD ROMS
+      - id: make
+        name: "Build .gbc ROM files"
+        run: |
+          make -j$(nproc)
+      - id: rename
+        name: "Rename .gbc files with commit hash"
+        run: |
+          mv pokered.gbc pokered-${{ env.SHORT_SHA }}.gbc
+          mv pokegreen.gbc pokegreen-${{ env.SHORT_SHA }}.gbc
+          mv pokeblue.gbc pokeblue-${{ env.SHORT_SHA }}.gbc
+      - id: upload
+        name: "Upload artifacts"
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: "gbc-rom-files"
+          retention-days: 1
+          path: |
+            *.gbc

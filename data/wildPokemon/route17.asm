@@ -1,0 +1,13 @@
+Route17Mons:
+	db $19
+	db 20,SPEAROW
+	db 22,SPEAROW
+	db 25,PONYTA
+	db 24,DODUO
+	db 27,PONYTA
+	db 26,DODUO
+	db 28,DODUO
+	db 29,PONYTA
+	db 25,FEAROW
+	db 27,FEAROW
+	db $00

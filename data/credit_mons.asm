@@ -1,0 +1,16 @@
+CreditsMons:
+	db VENUSAUR
+	db CHARIZARD
+	db BLASTOISE
+	db ONIX
+	db STARMIE
+	db RAICHU
+	db TANGELA
+	db MUK
+	db ALAKAZAM
+	db ARCANINE
+	db RHYDON
+	db LAPRAS
+	db MACHAMP
+	db GENGAR
+	db DRAGONITE

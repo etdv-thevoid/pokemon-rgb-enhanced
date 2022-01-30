@@ -1,0 +1,16 @@
+PrizeMonLevelDictionary:
+	db ABRA,15
+	db CLEFAIRY,18
+	db DRATINI,20
+
+	db EEVEE,25
+IF DEF(_RED)
+	db MAGMAR,30
+ENDC
+IF DEF(_GREEN)
+	db ELECTABUZZ,30
+ENDC
+IF DEF(_BLUE)
+	db JYNX,30
+ENDC
+	db PORYGON,20

@@ -1,0 +1,38 @@
+name: "Nightly Build"
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+
+jobs:
+  build:
+    name: "Build"
+    uses: ETDV-TheVoid/pokemon-rgb-enhanced/.github/workflows/build.yml@main
+  release:
+    name: "Release"
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Set environment variable
+        run: |
+          echo "SHORT_SHA=$(echo ${GITHUB_SHA} | cut -c1-8)" >> $GITHUB_ENV
+      - name: "Download artifacts"
+        uses: actions/download-artifact@v2.1.0
+        with:
+          name: "gbc-rom-files"
+      - name: "Rename .gbc files with nightly commit hash"
+        run: |
+          mv pokered*.gbc pokered-v2.0-nightly-${{ env.SHORT_SHA }}.gbc
+          mv pokegreen*.gbc pokegreen-v2.0-nightly-${{ env.SHORT_SHA }}.gbc
+          mv pokeblue*.gbc pokeblue-v2.0-nightly-${{ env.SHORT_SHA }}.gbc
+      - name: "Automated release"
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "v2.0-nightly"
+          title: "v2.0 Nightly Build"
+          prerelease: true
+          files: |
+            pokered*.gbc
+            pokegreen*.gbc
+            pokeblue*.gbc

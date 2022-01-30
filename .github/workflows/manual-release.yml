@@ -1,0 +1,50 @@
+name: "Manual Release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Version Tag'
+        required: true
+        default: 'v'
+
+jobs:
+  build:
+    name: "Build"
+    uses: ETDV-TheVoid/pokemon-rgb-enhanced/.github/workflows/build.yml@main
+  release:
+    name: "Release"
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: "Download artifacts"
+        uses: actions/download-artifact@v2.1.0
+        with:
+            name: "gbc-rom-files"
+      - name: "Rename .gbc files with version number"
+        run: |
+          mv pokered*.gbc pokered-${{ github.event.inputs.tag }}.gbc
+          mv pokegreen*.gbc pokegreen-${{ github.event.inputs.tag }}.gbc
+          mv pokeblue*.gbc pokeblue-${{ github.event.inputs.tag }}.gbc
+      - name: "Install zip"
+        run: |
+          sudo apt-get install zip -y
+      - name: "Archive .gbc files in .zip"
+        run: |
+          zip roms.zip pokered*.gbc pokegreen*.gbc pokeblue*.gbc
+      - name: "Install tar"
+        run: |
+          sudo apt-get install tar -y
+      - name: "Archive .gbc files in .tar.gz"
+        run: |
+          tar -czvf roms.tar.gz pokered*.gbc pokegreen*.gbc pokeblue*.gbc
+      - name: "Automated release"
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: ${{ github.event.inputs.tag }}
+          title: ${{ github.event.inputs.tag }}
+          prerelease: false
+          files: |
+            roms.zip
+            roms.tar.gz

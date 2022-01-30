@@ -1,0 +1,13 @@
+CeruleanMons:
+	db $00
+	db $0A
+	db 15,GOLDEEN
+	db 10,GOLDEEN
+	db 15,GOLDEEN
+	db 10,GOLDEEN
+	db 15,GOLDEEN
+	db 20,GOLDEEN
+	db 25,GOLDEEN
+	db 30,SEAKING
+	db 35,SEAKING
+	db 40,SEAKING
