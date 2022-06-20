@@ -11,6 +11,15 @@ prompt EQUS "db $58"  ; Prompt the player to end a text box (initiating some oth
 page   EQUS "db $49,"     ; Start a new Pokedex page.
 dex    EQUS "db $5f, $50" ; End a Pokedex entry.
 
+dict: MACRO
+	IF \1 == 0
+		and a
+	ELSE
+		cp \1
+	ENDC
+		jp z, \2
+ENDM
+
 TX_RAM: MACRO
 ; prints text to screen
 ; \1: RAM address to read from
@@ -40,6 +49,30 @@ TX_NUM: MACRO
 	dw \1
 	db \2 << 4 | \3
 ENDM
+
+TX_DIGIT: MACRO
+	if (\1) / $10000
+		ld a, \1 / $10000 % $100
+	else
+		xor a
+	endc
+	
+	ld [H_POWEROFTEN + 0], a
+	
+	if (\1) / $100
+		ld a, \1 / $100   % $100
+	else
+		xor a
+	endc
+
+	ld [H_POWEROFTEN + 1], a
+
+	ld a, \1 / $1     % $100
+	ld [H_POWEROFTEN + 2], a
+
+	call .PrintDigit
+	call .NextDigit
+endm
 
 TX_DELAY              EQUS "db $0a"
 TX_SFX_ITEM_1         EQUS "db $0b"

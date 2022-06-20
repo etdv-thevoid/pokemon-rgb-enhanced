@@ -364,16 +364,6 @@ LoadSpinnerArrowTiles:
 	jr nz, .asm_45006
 	ret
 
-spinner: MACRO
-; \1: source
-; \2: offset (BANK() chokes on literals)
-; \3: length
-; \4: dest
-	dw \1 + \2
-	db \3, BANK(\1)
-	dw \4
-ENDM
-
 FacilitySpinnerArrows:
 FACILITY_SPINNER EQU $20 * $10
 vFacilitySpinner EQU vTileset + FACILITY_SPINNER

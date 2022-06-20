@@ -4273,32 +4273,11 @@ PrintNumber::
 	cp 6
 	jr z, .hundred_thousands
 
-print_digit: macro
-
-if (\1) / $10000
-	ld a, \1 / $10000 % $100
-else	xor a
-endc
-	ld [H_POWEROFTEN + 0], a
-
-if (\1) / $100
-	ld a, \1 / $100   % $100
-else	xor a
-endc
-	ld [H_POWEROFTEN + 1], a
-
-	ld a, \1 / $1     % $100
-	ld [H_POWEROFTEN + 2], a
-
-	call .PrintDigit
-	call .NextDigit
-endm
-
-.millions          print_digit 1000000
-.hundred_thousands print_digit 100000
-.ten_thousands     print_digit 10000
-.thousands         print_digit 1000
-.hundreds          print_digit 100
+.millions          TX_DIGIT 1000000
+.hundred_thousands TX_DIGIT 100000
+.ten_thousands     TX_DIGIT 10000
+.thousands         TX_DIGIT 1000
+.hundreds          TX_DIGIT 100
 
 .tens
 	ld c, 0

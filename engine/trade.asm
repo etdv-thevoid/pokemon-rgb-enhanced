@@ -56,15 +56,6 @@ TradeAnimCommon:
 	ld [wOptions], a
 	ret
 
-addtradefunc: MACRO
-\1TradeFunc::
-	dw \1
-	ENDM
-
-tradefunc: MACRO
-	db (\1TradeFunc - TradeFuncPointerTable) / 2
-	ENDM
-
 ; The functions in the sequences below are executed in order by TradeFuncCommon.
 ; They are from opposite perspectives. The external clock one makes use of
 ; Trade_SwapNames to swap the player and enemy names for some functions.

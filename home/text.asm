@@ -81,15 +81,6 @@ Char4ETest::
 	jp PlaceNextChar_inc
 
 .next3 ; Check against a dictionary
-dict: macro
-if \1 == 0
-	and a
-else
-	cp \1
-endc
-	jp z, \2
-endm
-
 	dict $00, Char00 ; error
 	dict $4C, Char4C ; autocont
 	dict $4B, Char4B ; cont_

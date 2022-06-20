@@ -1,4 +1,3 @@
-
 StopAllMusic: MACRO
 	ld a, $ff
 	call PlaySound
