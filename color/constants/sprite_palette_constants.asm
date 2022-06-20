@@ -1,5 +1,6 @@
 ; Sprite Palettes
 const_value = 0
+
 	const SPR_PAL_RED       ; 00
 	const SPR_PAL_GREEN     ; 01
 	const SPR_PAL_BLUE      ; 02
@@ -12,6 +13,7 @@ const_value = 0
 
 ; Attack Sprites Palettes
 const_value = 0
+
 	const ATK_PAL_RED       ; 00
 	const ATK_PAL_GREEN     ; 01
 	const ATK_PAL_BLUE      ; 02
