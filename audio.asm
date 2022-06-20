@@ -3,7 +3,7 @@ AUDIO_1 EQU $2
 AUDIO_2 EQU $8
 AUDIO_3 EQU $1f
 
-INCLUDE "constants.asm"
+INCLUDE "includes.asm"
 
 
 SECTION "Sound Effect Headers 1", ROMX, BANK[AUDIO_1]

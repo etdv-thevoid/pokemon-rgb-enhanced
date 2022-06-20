@@ -112,6 +112,6 @@ _PewterCityText11::
 
 _PewterCityText12::
 	text "PEWTER CITY"
-	line "A Stone Gray"
+	line "A Stone Grey"
 	cont "City"
 	done

@@ -1,22 +1,3 @@
-; Handles sprite attributes
-
-ATK_PAL_GREY    EQU 0
-ATK_PAL_BLUE    EQU 1
-ATK_PAL_RED     EQU 2
-ATK_PAL_BROWN   EQU 3
-ATK_PAL_YELLOW  EQU 4
-ATK_PAL_GREEN   EQU 5
-ATK_PAL_ICE	    EQU 6
-ATK_PAL_PURPLE	EQU 7
-; 8: color based on attack type
-; 9: don't change color palette (assume it's already set properly from elsewhere)
-
-
-SPR_PAL_ORANGE	EQU 0
-SPR_PAL_BLUE	  EQU 1
-SPR_PAL_GREEN	  EQU 2
-SPR_PAL_BROWN	  EQU 3
-
 LoadOverworldSpritePalettes:
 	ld hl,SpritePalettes
 	jr LoadSpritePaletteData
@@ -70,8 +51,8 @@ ColorOverworldSprite:
 .noCarry
 	ld a,[de]		; Get the picture ID's palette
 
-	; If it's 4, that means no particular palette is assigned
-	cp 4
+	; If it's random, that means no particular palette is assigned
+	cp SPR_PAL_RANDOM
 	jr nz,.norandomColor
 
 	; This is a (somewhat) random but consistent color
@@ -112,11 +93,11 @@ ColorNonOverworldSprites:
 	ld e, a
 	ld d, W2_SpritePaletteMap>>8
 	ld a,[de]
-	cp 8 ; if 8, colorize based on attack type
+	cp ATK_PAL_TYPE ; colorize based on attack type
 	jr z,.getAttackType
-	cp 9 ; if 9, do not colorize (use whatever palette it's set to already)
+	cp ATK_PAL_SET ; do not colorize (use whatever palette it's set to already)
 	jr z,.nextSprite
-	cp 10 ; if 10 (used in game freak intro), color based on sprite number
+	cp ATK_PAL_INTRO ; color based on sprite number (used in game freak intro)
 	jr z, .gameFreakIntro
 	jr .setPalette ; Otherwise, use the value as-is
 
@@ -178,7 +159,7 @@ ColorNonOverworldSprites:
 .playersTurn
 	ld a,[wPlayerMoveType] ; Move type
 .gotType
-	ld hl, TypeColorTable
+	ld hl, TypePaletteMap
 	add l
 	ld l,a
 	jr nc,.noCarry
@@ -286,242 +267,7 @@ ClearSpritePaletteMap:
 	ret
 
 
-SpritePaletteAssignments: ; Characters on the overworld
-	; 0x01: SPRITE_RED
-	db SPR_PAL_ORANGE
-
-	; 0x02: SPRITE_BLUE
-	db SPR_PAL_BLUE
-
-	; 0x03: SPRITE_OAK
-	db SPR_PAL_BROWN
-
-	; 0x04: SPRITE_BUG_CATCHER
-	db 4
-
-	; 0x05: SPRITE_SLOWBRO
-	db SPR_PAL_ORANGE
-
-	; 0x06: SPRITE_LASS
-	db 4
-
-	; 0x07: SPRITE_BLACK_HAIR_BOY_1
-	db 4
-
-	; 0x08: SPRITE_LITTLE_GIRL
-	db 4
-
-	; 0x09: SPRITE_BIRD
-	db SPR_PAL_BROWN
-
-	; 0x0a: SPRITE_FAT_BALD_GUY
-	db 4
-
-	; 0x0b: SPRITE_GAMBLER
-	db 4
-
-	; 0x0c: SPRITE_BLACK_HAIR_BOY_2
-	db 4
-
-	; 0x0d: SPRITE_GIRL
-	db 4
-
-	; 0x0e: SPRITE_HIKER
-	db 4
-
-	; 0x0f: SPRITE_FOULARD_WOMAN
-	db 4
-
-	; 0x10: SPRITE_GENTLEMAN
-	db SPR_PAL_BLUE
-
-	; 0x11: SPRITE_DAISY
-	db SPR_PAL_ORANGE
-
-	; 0x12: SPRITE_BIKER
-	db 4
-
-	; 0x13: SPRITE_SAILOR
-	db SPR_PAL_BLUE
-
-	; 0x14: SPRITE_COOK
-	db SPR_PAL_BROWN
-
-	; 0x15: SPRITE_BIKE_SHOP_GUY
-	db SPR_PAL_ORANGE
-
-	; 0x16: SPRITE_MR_FUJI
-	db SPR_PAL_BLUE
-
-	; 0x17: SPRITE_GIOVANNI
-	db SPR_PAL_BROWN
-
-	; 0x18: SPRITE_ROCKET
-	db SPR_PAL_BROWN
-
-	; 0x19: SPRITE_MEDIUM
-	db SPR_PAL_BLUE
-
-	; 0x1a: SPRITE_WAITER
-	db SPR_PAL_ORANGE
-
-	; 0x1b: SPRITE_ERIKA
-	db SPR_PAL_GREEN
-
-	; 0x1c: SPRITE_MOM_GEISHA
-	db 4
-
-	; 0x1d: SPRITE_BRUNETTE_GIRL
-	db 4
-
-	; 0x1e: SPRITE_LANCE
-	db SPR_PAL_ORANGE
-
-	; 0x1f: SPRITE_OAK_SCIENTIST_AIDE
-	db SPR_PAL_BROWN
-
-	; 0x20: SPRITE_OAK_AIDE
-	db SPR_PAL_BROWN
-
-	; 0x21: SPRITE_ROCKER
-	db SPR_PAL_BLUE
-
-	; 0x22: SPRITE_SWIMMER
-	db 4
-
-	; 0x23: SPRITE_WHITE_PLAYER
-	db SPR_PAL_GREEN
-
-	; 0x24: SPRITE_GYM_HELPER
-	db SPR_PAL_BLUE
-
-	; 0x25: SPRITE_OLD_PERSON
-	db 4
-
-	; 0x26: SPRITE_MART_GUY
-	db SPR_PAL_BLUE
-
-	; 0x27: SPRITE_FISHER
-	db 4
-
-	; 0x28: SPRITE_OLD_MEDIUM_WOMAN
-	db 4
-
-	; 0x29: SPRITE_NURSE
-	db SPR_PAL_ORANGE
-
-	; 0x2a: SPRITE_CABLE_CLUB_WOMAN
-	db SPR_PAL_BLUE
-
-	; 0x2b: SPRITE_MR_MASTERBALL
-	db SPR_PAL_BLUE
-
-	; 0x2c: SPRITE_LAPRAS_GIVER
-	db 4
-
-	; 0x2d: SPRITE_WARDEN
-	db SPR_PAL_BROWN
-
-	; 0x2e: SPRITE_SS_CAPTAIN
-	db SPR_PAL_BLUE
-
-	; 0x2f: SPRITE_FISHER2
-	db 4
-
-	; 0x30: SPRITE_BLACKBELT
-	db SPR_PAL_BROWN
-
-	; 0x31: SPRITE_GUARD
-	db SPR_PAL_GREEN
-
-	; 0x32: SPRITE_COP_GUARD
-	db SPR_PAL_BLUE
-
-	; 0x33: SPRITE_MOM
-	db SPR_PAL_BLUE
-
-	; 0x34: SPRITE_BALDING_GUY
-	db 4
-
-	; 0x35: SPRITE_YOUNG_BOY
-	db 4
-
-	; 0x36: SPRITE_GAMEBOY_KID
-	db 4
-
-	; 0x37: SPRITE_SWIMMER_F
-	db 4
-
-	; 0x38: SPRITE_CLEFAIRY
-	db SPR_PAL_ORANGE
-
-	; 0x39: SPRITE_AGATHA
-	db SPR_PAL_BLUE
-
-	; 0x3a: SPRITE_BRUNO
-	db SPR_PAL_BROWN
-
-	; 0x3b: SPRITE_LORELEI
-	db SPR_PAL_ORANGE
-
-	; 0x3c: SPRITE_SEEL
-	db SPR_PAL_ORANGE
-
-	; 0x3d: SPRITE_BILL
-	db SPR_PAL_ORANGE
-
-	; 0x3e: SPRITE_BLAINE
-	db SPR_PAL_BROWN
-
-	; 0x3f: SPRITE_BROCK
-	db SPR_PAL_BROWN
-
-	; 0x40: SPRITE_KOGA
-	db SPR_PAL_BLUE
-
-	; 0x41: SPRITE_MISTY
-	db SPR_PAL_ORANGE
-
-	; 0x42: SPRITE_SABRINA
-	db SPR_PAL_ORANGE
-
-	; 0x43: SPRITE_SURGE
-	db SPR_PAL_BROWN
-
-	; 0x43: SPRITE_ROCKET_F
-	db SPR_PAL_ORANGE
-
-	;
-	; 1-FRAME SPRITES START HERE
-	;
-
-	; SPRITE_BALL
-	db SPR_PAL_ORANGE
-
-	; SPRITE_OMANYTE
-	db SPR_PAL_BROWN
-
-	; SPRITE_BOULDER
-	db SPR_PAL_BROWN
-
-	; SPRITE_PAPER_SHEET
-	db SPR_PAL_BROWN
-
-	; SPRITE_BOOK_MAP_DEX
-	db SPR_PAL_ORANGE
-
-	; SPRITE_CLIPBOARD
-	db SPR_PAL_BROWN
-
-	; SPRITE_SNORLAX
-	db SPR_PAL_BROWN
-
-	; SPRITE_OLD_AMBER
-	db SPR_PAL_BROWN
-
-	; SPRITE_LYING_OLD_MAN
-	db SPR_PAL_BROWN
-
+INCLUDE "color/data/sprite_palette_assignments.asm"
 
 AnimationTileset1Palettes:
 	INCBIN "color/data/animtileset1palettes.bin"
@@ -529,33 +275,11 @@ AnimationTileset1Palettes:
 AnimationTileset2Palettes:
 	INCBIN "color/data/animtileset2palettes.bin"
 
-TypeColorTable: ; Used for a select few sprites to be colorized based on attack type
-	db 0 ; NORMAL EQU $00
-	db 0 ; FIGHTING EQU $01
-	db 0 ; FLYING EQU $02
-	db 7 ; POISON EQU $03
-	db 3 ; GROUND EQU $04
-	db 3 ; ROCK EQU $05
-	db 0 ; TYPELESS EQU $06
-	db 5 ; BUG EQU $07
-	db 6 ; DRAGON EQU $08
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 0
-	db 2 ; FIRE EQU $14
-	db 1 ; WATER EQU $15
-	db 5 ; GRASS EQU $16
-	db 4 ; ELECTRIC EQU $17
-	db 7 ; PSYCHIC EQU $18
-	db 6 ; ICE EQU $19
-	db 7 ; GHOST EQU $1A
+INCLUDE "color/data/typepalettemap.asm"
 
 INCLUDE "color/data/spritepalettes.asm"
+
+SlotPaletteMap:
+	INCBIN "color/data/slotpalettemap_blue.bin"
+
+INCLUDE "color/data/slotspritepalettemap.asm"

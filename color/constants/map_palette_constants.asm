@@ -1,3 +1,15 @@
+; Map tileset palette assignments
+const_value = 0
+	const MAP_PAL_GRAY      ; 00
+	const MAP_PAL_RED       ; 01
+	const MAP_PAL_GREEN     ; 02
+	const MAP_PAL_BLUE      ; 03
+	const MAP_PAL_YELLOW    ; 04
+	const MAP_PAL_BROWN     ; 05
+	const MAP_PAL_ROOF      ; 06
+	const MAP_PAL_TEXT      ; 07
+
+; Map tile colors
 const_value = 0
 	const INTRO_GRAY        ; 00: used only when booting up the game
 	const OUTDOOR_GRAY      ; 01
@@ -65,14 +77,3 @@ const_value = 0
 	const MAP_PALETTE_3D    ; 3D
 	const MAP_PALETTE_3E    ; 3E
 	const MAP_PALETTE_3F    ; 3F
-
-; Named to make tileset palette assignments consistent with Pokecrystal
-const_value = 0
-	const GRAY      ; 00
-	const RED       ; 01
-	const GREEN     ; 02
-	const BLUE      ; 03
-	const YELLOW    ; 04
-	const BROWN     ; 05
-	const ROOF      ; 06
-	const TEXT      ; 07

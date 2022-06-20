@@ -1,5 +1,7 @@
-INCLUDE "macros.asm"
-INCLUDE "charmap.asm"
+INCLUDE "macros/asm_macros.asm"
+INCLUDE "macros/constants_macros.asm"
+
+INCLUDE "constants/charmap.asm"
 
 INCLUDE "ram/hram.asm"
 INCLUDE "ram/vram.asm"
@@ -30,5 +32,16 @@ INCLUDE "constants/tilesets.asm"
 INCLUDE "constants/starter_mons.asm"
 INCLUDE "constants/event_constants.asm"
 INCLUDE "constants/text_constants.asm"
-INCLUDE "color/wram.asm"
-INCLUDE "color/data/map_palette_constants.asm"
+
+INCLUDE "color/ram/wram.asm"
+INCLUDE "color/constants/map_palette_constants.asm"
+INCLUDE "color/constants/sprite_palette_constants.asm"
+
+INCLUDE "macros/audio_macros.asm"
+INCLUDE "macros/color_macros.asm"
+INCLUDE "macros/data_macros.asm"
+INCLUDE "macros/engine_macros.asm"
+INCLUDE "macros/map_macros.asm"
+INCLUDE "macros/event_macros.asm"
+INCLUDE "macros/ram_macros.asm"
+INCLUDE "macros/text_macros.asm"

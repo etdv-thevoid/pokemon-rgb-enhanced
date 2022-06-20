@@ -1,5 +1,5 @@
-INCLUDE "charmap.asm"
-INCLUDE "constants/text_constants.asm"
+INCLUDE "includes.asm"
+
 TEXT_1  EQU $20
 TEXT_2  EQU TEXT_1 + 1
 TEXT_3  EQU TEXT_2 + 1
@@ -14,10 +14,6 @@ TEXT_11 EQU TEXT_10 + 1
 
 POKEDEX_TEXT EQU TEXT_11 + 1
 MOVE_NAMES   EQU POKEDEX_TEXT + 1
-
-INCLUDE "macros.asm"
-INCLUDE "ram/hram.asm"
-
 
 SECTION "Text 1", ROMX, BANK[TEXT_1]
 
