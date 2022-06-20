@@ -8,7 +8,7 @@ db WATER ; species type 1
 db WATER ; species type 2
 db 190 ; catch rate
 db 99 ; base exp yield
-INCBIN "pic/gsmon/slowpoke.pic",0,1 ; 55, sprite dimensions
+INCBIN "gfx/gs/mon/slowpoke.pic",0,1 ; 55, sprite dimensions
 dw SlowpokePicFront
 dw SlowpokePicBack
 ; attacks known at lvl 0

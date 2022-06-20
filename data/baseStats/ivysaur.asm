@@ -8,7 +8,7 @@ db GRASS ; species type 1
 db GRASS ; species type 2
 db 45 ; catch rate
 db 141 ; base exp yield
-INCBIN "pic/gsmon/ivysaur.pic",0,1 ; 66, sprite dimensions
+INCBIN "gfx/gs/mon/ivysaur.pic",0,1 ; 66, sprite dimensions
 dw IvysaurPicFront
 dw IvysaurPicBack
 ; attacks known at lvl 0
