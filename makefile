@@ -6,9 +6,9 @@ MD5 := md5sum -c --quiet
 pic      := $(PYTHON) -m pret.pokemontools.pic compress
 includes := $(PYTHON) -m pret.pokemontools.scan_includes
 
-pokered_obj   := audio_red.o main_red.o text_red.o wram_red.o
-pokegreen_obj := audio_green.o main_green.o text_green.o wram_green.o
-pokeblue_obj  := audio_blue.o main_blue.o text_blue.o wram_blue.o
+pokered_obj   := audio_red.o main_red.o text_red.o ram_red.o
+pokegreen_obj := audio_green.o main_green.o text_green.o ram_green.o
+pokeblue_obj  := audio_blue.o main_blue.o text_blue.o ram_blue.o
 
 .SUFFIXES:
 .SUFFIXES: .asm .o .gbc .png .2bpp .1bpp .pic

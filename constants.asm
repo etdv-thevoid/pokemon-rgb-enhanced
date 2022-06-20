@@ -1,8 +1,8 @@
 INCLUDE "macros.asm"
 INCLUDE "charmap.asm"
 
-INCLUDE "hram.asm"
-INCLUDE "vram.asm"
+INCLUDE "ram/hram.asm"
+INCLUDE "ram/vram.asm"
 
 INCLUDE "constants/hardware_constants.asm"
 INCLUDE "constants/oam_constants.asm"
