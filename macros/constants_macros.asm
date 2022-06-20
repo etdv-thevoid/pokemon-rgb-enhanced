@@ -1,16 +1,16 @@
 ; Constant enumeration is useful for monsters, items, moves, etc.
 
 const_def: MACRO
-    const_value set 0
+const_value = 0
 ENDM
 
 const_skip: MACRO
-    const_value = const_value + 1
+const_value = const_value + 1
 ENDM
 
 const: MACRO
-    \1 EQU const_value
-    const_value = const_value + 1
+\1 EQU const_value
+const_value = const_value + 1
 ENDM
 
 map_const: MACRO

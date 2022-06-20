@@ -207,6 +207,7 @@ ENDC
 	ENDR
 	db x
 ENDM
+
 move: MACRO
 	db \1 ; animation (interchangeable with move id)
 	db \2 ; effect
