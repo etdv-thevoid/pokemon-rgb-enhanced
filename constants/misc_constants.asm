@@ -30,14 +30,14 @@ D_UP     EQU %01000000
 D_DOWN   EQU %10000000
 
 const_def
-	const BIT_A_BUTTON
-	const BIT_B_BUTTON
-	const BIT_SELECT
-	const BIT_START
-	const BIT_D_RIGHT
-	const BIT_D_LEFT
-	const BIT_D_UP
-	const BIT_D_DOWN
+const BIT_A_BUTTON
+const BIT_B_BUTTON
+const BIT_SELECT
+const BIT_START
+const BIT_D_RIGHT
+const BIT_D_LEFT
+const BIT_D_UP
+const BIT_D_DOWN
 
 SCREEN_WIDTH  EQU 20
 SCREEN_HEIGHT EQU 18
