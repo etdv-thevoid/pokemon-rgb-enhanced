@@ -1,6 +1,3 @@
-
-INCLUDE "constants.asm"
-
 flag_array: MACRO
 	ds ((\1) + 7) / 8
 ENDM
@@ -3241,10 +3238,6 @@ wEXPBarNeededEXP::    ds 3
 wEXPBarKeepFullFlag:: ds 1
 
 
-
 SECTION "Stack", WRAMX[$df00], BANK[1]
 	ds $ff
 wStack:: ; dfff
-
-
-INCLUDE "sram.asm"

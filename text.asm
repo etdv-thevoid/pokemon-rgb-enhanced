@@ -16,7 +16,7 @@ POKEDEX_TEXT EQU TEXT_11 + 1
 MOVE_NAMES   EQU POKEDEX_TEXT + 1
 
 INCLUDE "macros.asm"
-INCLUDE "hram.asm"
+INCLUDE "ram/hram.asm"
 
 
 SECTION "Text 1", ROMX, BANK[TEXT_1]
