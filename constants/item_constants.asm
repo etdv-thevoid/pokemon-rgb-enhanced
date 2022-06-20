@@ -1,5 +1,4 @@
-const_start
-const_skip ; start at 1
+const_value = 1 ; start at 1
 
 	const MASTER_BALL   ; $01
 	const ULTRA_BALL    ; $02

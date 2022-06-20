@@ -1,5 +1,4 @@
-const_start
-const_skip ; start at 1
+const_value = 1 ; start at 1
 trainer_const YOUNGSTER     ; $01
 trainer_const BUG_CATCHER   ; $02
 trainer_const LASS          ; $03

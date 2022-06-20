@@ -1,4 +1,4 @@
-const_start
+const_value = 0
 
 	const OVERWORLD    ; 0
 	const REDS_HOUSE_1 ; 1
