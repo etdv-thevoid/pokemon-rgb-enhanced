@@ -16,7 +16,7 @@ db TAKE_DOWN
 db AGILITY
 db FIRE_SPIN
 db 0
-db 5 ; growth rate
+db GR_SLOW ; growth rate
 ; learnset
 	tmlearn 6,8
 	tmlearn 9,10,15

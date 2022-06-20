@@ -16,7 +16,7 @@ db ICE_PUNCH
 db THUNDERPUNCH
 db FIRE_PUNCH
 db 0
-db 5 ; growth rate
+db GR_SLOW ; growth rate
 ; learnset
 	tmlearn 2,6,7,8
 	tmlearn 9,10,11,13,14,15

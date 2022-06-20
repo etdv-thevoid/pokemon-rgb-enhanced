@@ -16,7 +16,7 @@ db QUICK_ATTACK
 db CONFUSE_RAY
 db HYPNOSIS
 db 0
-db 0 ; growth rate
+db GR_MEDIUM_FAST ; growth rate
 ; learnset
 	tmlearn 6,8
 	tmlearn 9,10,15

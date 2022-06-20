@@ -16,7 +16,7 @@ db PECK
 db GROWL
 db 0
 db 0
-db 0 ; growth rate
+db GR_MEDIUM_FAST ; growth rate
 ; learnset
 	tmlearn 2,4,6
 	tmlearn 9,10

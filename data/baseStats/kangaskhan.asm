@@ -16,7 +16,7 @@ db COMET_PUNCH
 db 0
 db 0
 db 0
-db 0 ; growth rate
+db GR_MEDIUM_FAST ; growth rate
 ; learnset
 	tmlearn 1,5,6,8
 	tmlearn 9,10,11,13,14,15

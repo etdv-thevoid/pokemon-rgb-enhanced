@@ -16,7 +16,7 @@ db SCRATCH
 db GROWL
 db 0
 db 0
-db 0 ; growth rate
+db GR_MEDIUM_FAST ; growth rate
 ; learnset
 	tmlearn 6,8
 	tmlearn 9,10

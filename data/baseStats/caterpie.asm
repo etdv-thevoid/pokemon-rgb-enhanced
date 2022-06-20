@@ -16,7 +16,7 @@ db TACKLE
 db STRING_SHOT
 db 0
 db 0
-db 0 ; growth rate
+db GR_MEDIUM_FAST ; growth rate
 ; learnset
 	tmlearn 0
 	tmlearn 0
