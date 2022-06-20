@@ -676,7 +676,7 @@ def map_header(name, config=config):
         return attrs
 
     elif config.version == 'red':
-        header = config.open('data/mapHeaders/{0}.asm'.format(name)).read()
+        header = config.open('maps/headers/{0}.asm'.format(name)).read()
         header = split_comments(header.split('\n'))
         attributes = [
             ('tileset_id',        'db'),
