@@ -1,6 +1,6 @@
 ; Constant enumeration is useful for monsters, items, moves, etc.
 const_def: MACRO
-    const_def
+    const_value = 0
 ENDM
 
 const_skip: MACRO
