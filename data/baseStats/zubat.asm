@@ -8,7 +8,7 @@ db POISON ; species type 1
 db FLYING ; species type 2
 db 255 ; catch rate
 db 54 ; base exp yield
-INCBIN "pic/gsmon/zubat.pic",0,1 ; 55, sprite dimensions
+INCBIN "gfx/gs/mon/zubat.pic",0,1 ; 55, sprite dimensions
 dw ZubatPicFront
 dw ZubatPicBack
 ; attacks known at lvl 0

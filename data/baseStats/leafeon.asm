@@ -8,7 +8,7 @@ db GRASS ; species type 1
 db GRASS ; species type 2
 db 45 ; catch rate
 db 199 ; base exp yield
-INCBIN "pic/gsmon/leafeon.pic",0,1 ; 77, sprite dimensions
+INCBIN "gfx/gs/mon/leafeon.pic",0,1 ; 77, sprite dimensions
 dw LeafeonPicFront
 dw LeafeonPicBack
 ; attacks known at lvl 0

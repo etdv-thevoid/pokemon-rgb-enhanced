@@ -8,7 +8,7 @@ db BUG ; species type 1
 db POISON ; species type 2
 db 45 ; catch rate
 db 159 ; base exp yield
-INCBIN "pic/gsmon/beedrill.pic",0,1 ; 77, sprite dimensions
+INCBIN "gfx/gs/mon/beedrill.pic",0,1 ; 77, sprite dimensions
 dw BeedrillPicFront
 dw BeedrillPicBack
 ; attacks known at lvl 0

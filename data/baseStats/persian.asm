@@ -8,7 +8,7 @@ db NORMAL ; species type 1
 db NORMAL ; species type 2
 db 90 ; catch rate
 db 148 ; base exp yield
-INCBIN "pic/gsmon/persian.pic",0,1 ; 77, sprite dimensions
+INCBIN "gfx/gs/mon/persian.pic",0,1 ; 77, sprite dimensions
 dw PersianPicFront
 dw PersianPicBack
 ; attacks known at lvl 0
