@@ -1,4 +1,5 @@
-const_value = 1
+const_def
+const_skip ; start at 1
 
 	const BULBASAUR  ; 1
 	const IVYSAUR    ; 2

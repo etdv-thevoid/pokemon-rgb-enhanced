@@ -1,4 +1,5 @@
-const_value = 1
+const_def
+const_skip ; start at 1
 
 	const POUND        ; 01
 	const KARATE_CHOP  ; 02

@@ -18,7 +18,7 @@ SET_PAL_BATTLE_AFTER_BLACK   EQU $10
 UPDATE_PARTY_MENU_BLK_PACKET EQU $FC
 
 ; super game boy palettes
-const_value = 0
+const_def
 
 	const PAL_TOWNMAP2  ; $00
 	const PAL_SLOTS5    ; $01

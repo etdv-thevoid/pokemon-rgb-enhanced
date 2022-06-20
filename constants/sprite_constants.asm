@@ -1,5 +1,5 @@
 ; pokemon's overworld sprites
-const_value = 0
+const_def
 
 	const SPRITE_MON        ; $0
 	const SPRITE_BALL_M     ; $1
@@ -17,7 +17,8 @@ const_value = 0
 	const SPRITE_SNORLAX_M  ; $E
 
 ; overworld sprites
-const_value = 1
+const_def
+const_skip ; start at 1
 
 	const SPRITE_RED                       ; $01
 	const SPRITE_BLUE                      ; $02

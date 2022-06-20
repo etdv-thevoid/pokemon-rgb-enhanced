@@ -4655,7 +4655,8 @@ SetMapTextPointer::
 	ret
 
 TextPredefs::
-const_value = 1
+const_def
+const_skip ; start at 1
 
 	add_tx_pre CardKeySuccessText                   ; 01
 	add_tx_pre CardKeyFailText                      ; 02

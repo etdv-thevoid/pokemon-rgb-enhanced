@@ -1,4 +1,3 @@
-
 ; data format macros
 
 percent EQUS "* $ff / 100"
