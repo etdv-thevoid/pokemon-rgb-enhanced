@@ -16,7 +16,7 @@ db SKULL_BASH
 db POUND
 db TAIL_WHIP
 db 0
-db 3 ; growth rate
+db GR_MEDIUM_SLOW ; growth rate
 ; learnset
 	tmlearn 1,5,6,8
 	tmlearn 9,10,11,13,14,15

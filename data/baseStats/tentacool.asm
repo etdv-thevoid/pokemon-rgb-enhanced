@@ -16,7 +16,7 @@ db POISON_STING
 db 0
 db 0
 db 0
-db 5 ; growth rate
+db GR_SLOW ; growth rate
 ; learnset
 	tmlearn 3,6
 	tmlearn 9,10,11,12,13,14

@@ -16,7 +16,7 @@ db CONFUSION
 db BARRAGE
 db SLEEP_POWDER
 db 0
-db 5 ; growth rate
+db GR_SLOW ; growth rate
 ; learnset
 	tmlearn 6
 	tmlearn 9,10,12,15

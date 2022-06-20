@@ -16,7 +16,7 @@ db GUST
 db 0
 db 0
 db 0
-db 5 ; growth rate
+db GR_SLOW ; growth rate
 ; learnset
 	tmlearn 2,4,6
 	tmlearn 9,10,11,13,14,15

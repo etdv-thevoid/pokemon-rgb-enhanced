@@ -16,7 +16,7 @@ db TACKLE
 db GROWL
 db 0
 db 0
-db 3 ; growth rate
+db GR_MEDIUM_SLOW ; growth rate
 ; learnset
 	tmlearn 3,6,8
 	tmlearn 9,10,12

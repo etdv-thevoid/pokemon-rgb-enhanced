@@ -16,7 +16,7 @@ db TACKLE
 db POISON_GAS
 db 0
 db 0
-db 0 ; growth rate
+db GR_MEDIUM_FAST ; growth rate
 ; learnset
 	tmlearn 6
 	tmlearn 0

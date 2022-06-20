@@ -16,7 +16,7 @@ db TACKLE
 db TAIL_WHIP
 db 0
 db 0
-db 5 ; growth rate
+db GR_SLOW ; growth rate
 ; learnset
 	tmlearn 6,7,8
 	tmlearn 9,10,13,14,15

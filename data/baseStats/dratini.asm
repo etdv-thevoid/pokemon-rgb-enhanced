@@ -16,7 +16,7 @@ db BIND
 db 0
 db 0
 db 0
-db 5 ; growth rate
+db GR_SLOW ; growth rate
 ; learnset
 	tmlearn 6,8
 	tmlearn 9,10,11,13,14

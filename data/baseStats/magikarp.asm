@@ -16,7 +16,7 @@ db SPLASH
 db 0
 db 0
 db 0
-db 5 ; growth rate
+db GR_SLOW ; growth rate
 ; learnset
 	tmlearn 0
 	tmlearn 0

@@ -16,7 +16,7 @@ db BUBBLE
 db 0
 db 0
 db 0
-db 0 ; growth rate
+db GR_MEDIUM_FAST ; growth rate
 ; learnset
 	tmlearn 3,6,8
 	tmlearn 9,10,11,13,14
