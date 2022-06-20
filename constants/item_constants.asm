@@ -1,4 +1,4 @@
-const_def
+const_start
 const_skip ; start at 1
 
 	const MASTER_BALL   ; $01

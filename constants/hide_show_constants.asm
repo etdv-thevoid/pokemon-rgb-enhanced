@@ -4,7 +4,7 @@
 ; (they are either items or sprites that deactivate after battle
 ; and are detected in wMissableObjectList)
 
-const_def
+const_start
 
 	const HS_PALLET_TOWN_OAK              ; 00
 	const HS_LYING_OLD_MAN                ; 01

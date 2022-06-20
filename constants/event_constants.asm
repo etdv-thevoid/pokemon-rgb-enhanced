@@ -1,4 +1,4 @@
-const_def
+const_start
 
 	const EVENT_FOLLOWED_OAK_INTO_LAB                ; 000, (D747, bit 0)
 	const EVENT_001                                  ; 001, (D747, bit 1)

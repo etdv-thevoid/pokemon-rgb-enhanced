@@ -1,5 +1,5 @@
 ; Map tileset palette assignments
-const_def
+const_start
 	const MAP_PAL_GRAY      ; 00
 	const MAP_PAL_RED       ; 01
 	const MAP_PAL_GREEN     ; 02
@@ -10,7 +10,7 @@ const_def
 	const MAP_PAL_TEXT      ; 07
 
 ; Map tile colors
-const_def
+const_start
 	const INTRO_GRAY        ; 00: used only when booting up the game
 	const OUTDOOR_GRAY      ; 01
 	const OUTDOOR_RED       ; 02

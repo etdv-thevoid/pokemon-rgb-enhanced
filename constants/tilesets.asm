@@ -1,4 +1,4 @@
-const_def
+const_start
 
 	const OVERWORLD    ; 0
 	const REDS_HOUSE_1 ; 1

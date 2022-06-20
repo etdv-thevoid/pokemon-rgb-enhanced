@@ -1,5 +1,5 @@
 ; Sprite Palettes
-const_def
+const_start
 	const SPR_PAL_RED       ; 00
 	const SPR_PAL_GREEN     ; 01
 	const SPR_PAL_BLUE      ; 02
@@ -11,7 +11,7 @@ const_def
     const SPR_PAL_RANDOM    ; 08: random set
 
 ; Attack Sprites Palettes
-const_def
+const_start
 	const ATK_PAL_RED       ; 00
 	const ATK_PAL_GREEN     ; 01
 	const ATK_PAL_BLUE      ; 02

@@ -1,4 +1,4 @@
-const_def
+const_start
 map_const PALLET_TOWN,                 9, 10 ; $00
 map_const VIRIDIAN_CITY,              18, 20 ; $01
 map_const PEWTER_CITY,                18, 20 ; $02
