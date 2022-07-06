@@ -11,16 +11,7 @@ on:
 jobs:
   build:
     name: "Build"
-    runs-on: ubuntu-latest
-    steps:
-      - id: checkout
-        name: "Checkout pokemon-rgb-enhanced"
-        uses: actions/checkout@v2.4.0
-        with:
-          submodules: recursive
-      - id: build
-        name: "Initiate Build"
-        uses: .github/workflows/build.yml@main
+    uses: ETDV-TheVoid/pokemon-rgb-enhanced/.github/workflows/build.yml@main
   release:
     name: "Release"
     runs-on: ubuntu-latest
