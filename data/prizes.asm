@@ -34,6 +34,9 @@ ENDC
 IF DEF(_BLUE)
 	db JYNX
 ENDC
+IF DEF(_YELLOW)
+	db DITTO
+ENDC
 	db PORYGON
 	db "@"
 

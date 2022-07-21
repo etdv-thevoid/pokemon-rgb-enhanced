@@ -26,18 +26,19 @@ jobs:
           mv pokered*.gbc pokered-${{ env.GITHUB_REF_NAME }}.gbc
           mv pokegreen*.gbc pokegreen-${{ env.GITHUB_REF_NAME }}.gbc
           mv pokeblue*.gbc pokeblue-${{ env.GITHUB_REF_NAME }}.gbc
+          mv pokeyellow*.gbc pokeyellow-${{ env.GITHUB_REF_NAME }}.gbc
       - name: "Install zip"
         run: |
           sudo apt-get install zip -y
       - name: "Archive .gbc files in .zip"
         run: |
-          zip roms.zip pokered*.gbc pokegreen*.gbc pokeblue*.gbc
+          zip roms.zip pokered*.gbc pokegreen*.gbc pokeblue*.gbc pokeyellow*.gbc
       - name: "Install tar"
         run: |
           sudo apt-get install tar -y
       - name: "Archive .gbc files in .tar.gz"
         run: |
-          tar -czvf roms.tar.gz pokered*.gbc pokegreen*.gbc pokeblue*.gbc
+          tar -czvf roms.tar.gz pokered*.gbc pokegreen*.gbc pokeblue*.gbc pokeyellow*.gbc
       - name: "Automated release"
         uses: marvinpinto/action-automatic-releases@latest
         with:

@@ -36,4 +36,16 @@ IF DEF(_BLUE)
 	db 19,MEOWTH
 	db 20,MEOWTH
 ENDC
+IF DEF(_YELLOW)
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+ENDC
 	db $00

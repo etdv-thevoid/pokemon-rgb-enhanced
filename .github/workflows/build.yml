@@ -64,6 +64,7 @@ jobs:
           mv pokered.gbc pokered-${{ env.SHORT_SHA }}.gbc
           mv pokegreen.gbc pokegreen-${{ env.SHORT_SHA }}.gbc
           mv pokeblue.gbc pokeblue-${{ env.SHORT_SHA }}.gbc
+          mv pokeyellow.gbc pokeyellow-${{ env.SHORT_SHA }}.gbc
       - id: upload
         name: "Upload artifacts"
         uses: actions/upload-artifact@v2.3.1

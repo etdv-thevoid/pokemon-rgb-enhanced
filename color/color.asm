@@ -350,6 +350,9 @@ ENDC
 IF DEF(_BLUE)
 	ld d,PAL_CYANMON
 ENDC
+IF DEF(_YELLOW)
+	ld d, PAL_YELLOWMON
+ENDC
 	ld e,1
 	callba LoadSGBPalette
 
@@ -838,6 +841,9 @@ IF DEF(_GREEN)
 ENDC
 IF DEF(_BLUE)
 	ld d,PAL_CYANMON
+ENDC
+IF DEF(_YELLOW)
+	ld d, PAL_YELLOWMON
 ENDC
 	ld e,6
 	callba LoadSGBPalette

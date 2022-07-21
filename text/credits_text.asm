@@ -74,6 +74,9 @@ ENDC
 IF DEF(_BLUE)
 	db -8, "BLUE VERSION@"
 ENDC
+IF DEF(_YELLOW)
+	db -8, "YELLOW VERSION@"
+ENDC
 CredTajiri:
 	db -6, "SATOSHI TAJIRI@"
 CredTaOota:

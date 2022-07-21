@@ -14,6 +14,9 @@ Route2Mons:
 	if DEF(_BLUE)
 		db 3,WEEDLE
 	ENDC
+	if DEF(_YELLOW)
+		db 3,CATERPIE
+	ENDC
 	db 2,RATTATA
 	db 5,RATTATA
 	if DEF(_RED)
@@ -27,5 +30,9 @@ Route2Mons:
 	if DEF(_BLUE)
 		db 4,WEEDLE
 		db 5,WEEDLE
+	ENDC
+	if DEF(_YELLOW)
+		db 4,CATERPIE
+		db 5,CATERPIE
 	ENDC
 	db $00

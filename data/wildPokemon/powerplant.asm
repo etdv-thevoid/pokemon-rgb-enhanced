@@ -36,4 +36,16 @@ IF DEF(_BLUE)
 	db 35,MAGNETON
 	db 38,MAGNETON
 ENDC
+IF DEF(_YELLOW)
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+	db 5,DITTO
+ENDC
 	db $00

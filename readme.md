@@ -4,8 +4,6 @@
 
 Gen I Pokémon that feels "just like you remember it". But without all the illogical nonsense and crazy bugs.
 
-For additional info, check the [**official website**][website].
-
 ## Build Instructions
 
 This repository builds into the following .gbc ROMs:
@@ -79,8 +77,6 @@ Extract the archive and put `rgbasm.exe`, `rgblink.exe`, `rgbfix.exe` and `rgbgf
 ## See also
 
 This project is based on the [**Pokémon Red Disassembly**][pokered] by all the wonderful people over at the *Pokémon Reverse Engineering Team* ([**PRET**][pret]).
-
-[website]: https://etdv-thevoid.github.io/pokemon-rgb-enhanced/
 
 [pokered]: http://github.com/pret/pokered
 [pret]: https://github.com/pret

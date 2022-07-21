@@ -117,16 +117,19 @@ DisplayTitleScreen:
 	call SaveScreenTilesToBuffer2
 	call LoadScreenTilesFromBuffer2
 	call EnableLCD
+	; which Pokemon to show first on the title screen
 IF DEF(_RED)
-	ld a,CHARMANDER ; which Pokemon to show first on the title screen
+	ld a,STARTER1
 ENDC
 IF DEF(_GREEN)
-	ld a,BULBASAUR ; which Pokemon to show first on the title screen
+	ld a,STARTER3
 ENDC
 IF DEF(_BLUE)
-	ld a,SQUIRTLE ; which Pokemon to show first on the title screen
+	ld a,STARTER2
 ENDC
-
+IF DEF(_YELLOW)
+	ld a,STARTER4
+ENDC
 	ld [wTitleMonSpecies], a
 	call LoadTitleMonSprite
 	ld a, (vBGMap0 + $300) / $100
@@ -399,6 +402,9 @@ ENDC
 IF DEF(_BLUE)
 	coord hl, 7, 8
 ENDC
+IF DEF(_YELLOW)
+	coord hl, 5, 8
+ENDC
 	ld de, VersionOnTitleScreenText
 	jp PlaceString
 
@@ -412,6 +418,9 @@ IF DEF(_GREEN)
 ENDC
 IF DEF(_BLUE)
 	db $61,$62,$63,$64,$65,$66,$67,$68,"@" ; "Blue Version"
+ENDC
+IF DEF(_YELLOW)
+	db $60,$61,$62,$63,$64,$65,$66,$67,$68,$69,"@" ; "Yellow Version"
 ENDC
 
 NintenText: db "NINTEN@"

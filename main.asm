@@ -1674,6 +1674,9 @@ ENDC
 IF DEF(_BLUE)
 	INCBIN "gfx/blue/blueversion.1bpp" ; 8 tiles
 ENDC
+IF DEF(_YELLOW)
+	INCBIN "gfx/yellow/yellowversion.1bpp" ; 10 tiles
+ENDC
 Version_GFXEnd:
 
 Dojo_GFX:
