@@ -3215,12 +3215,15 @@ SECTION "Pokedex Text", ROMX, BANK[POKEDEX_TEXT]
 IF DEF(_RED)
 INCBIN "text/pokedex_redgreen.asm"
 ENDC
+
 IF DEF(_GREEN)
 INCBIN "text/pokedex_redgreen.asm"
 ENDC
+
 IF DEF(_BLUE)
 INCBIN "text/pokedex_blueyellow.asm"
 ENDC
+
 IF DEF(_YELLOW)
 INCBIN "text/pokedex_blueyellow.asm"
 ENDC

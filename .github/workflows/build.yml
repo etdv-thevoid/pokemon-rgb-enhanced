@@ -54,10 +54,24 @@ jobs:
           popd
 
       # BUILD ROMS
-      - id: make
-        name: "Build .gbc ROM files"
+      - id: make-red
+        name: "Build pokered"
         run: |
-          make -j$(nproc)
+          make red -j$(nproc)
+      - id: make-green
+        name: "Build pokegreen"
+        run: |
+          make green -j$(nproc)
+      - id: make-blue
+        name: "Build pokeblue"
+        run: |
+          make blue -j$(nproc)
+      - id: make-yellow
+        name: "Build pokeyellow"
+        run: |
+          make yellow -j$(nproc)
+      
+      # PACKAGE ARTIFACTS
       - id: rename
         name: "Rename .gbc files with commit hash"
         run: |
