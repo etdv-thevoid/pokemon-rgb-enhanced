@@ -10,7 +10,6 @@ on:
 
 jobs:
   build:
-    name: "Build"
     uses: ETDV-TheVoid/pokemon-rgb-enhanced/.github/workflows/build.yml@main
   release:
     name: "Release"
