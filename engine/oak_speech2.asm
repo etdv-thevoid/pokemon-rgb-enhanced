@@ -1,5 +1,6 @@
 ChoosePlayerName:
-	call OakSpeechSlidePicRight
+	and a
+	jr nz, .AreGirl ; Skip to girl names if you are a girl instead
 	ld de, DefaultNamesPlayer
 	call DisplayIntroNameTextBox
 	ld a, [wCurrentMenuItem]
@@ -10,6 +11,17 @@ ChoosePlayerName:
 	ld de, wPlayerName
 	call OakSpeechSlidePicLeft
 	jr .done
+.AreGirl ; Copy of the boy naming routine, just with girl's names
+	ld de, DefaultNamesGirl
+	call DisplayIntroNameTextBox
+	ld a, [wCurrentMenuItem]
+	and a
+	jr z, .customName
+	ld hl, DefaultNamesGirlList
+	call GetDefaultName
+	ld de, wPlayerName
+	call OakSpeechSlidePicLeft
+	jr .done ; End of new Girl Names routine
 .customName
 	ld hl, wPlayerName
 	xor a ; NAME_PLAYER_SCREEN
@@ -22,6 +34,12 @@ ChoosePlayerName:
 	call Delay3
 	ld de, RedPicFront
 	ld b, BANK(RedPicFront)
+	ld a, [wPlayerGender] ; Added gender check
+	and a
+	jr z, .AreBoy3
+	ld de, GreenPicFront
+	ld b, BANK(GreenPicFront)
+.AreBoy3
 	call IntroDisplayPicCenteredOrUpperRight
 .done
 	ld hl, YourNameIsText
@@ -187,12 +205,18 @@ DisplayIntroNameTextBox:
 .namestring
 	db "NAME@"
 
-IF DEF(_RED)
 DefaultNamesPlayer:
 	db   "NEW NAME"
 	next "RED"
 	next "ASH"
 	next "JACK"
+	db   "@"
+
+DefaultNamesGirl:
+	db   "NEW NAME"
+	next "GREEN"
+	next "LEAF"
+	next "JILL"
 	db   "@"
 
 DefaultNamesRival:
@@ -201,39 +225,6 @@ DefaultNamesRival:
 	next "GARY"
 	next "JOHN"
 	db   "@"
-ENDC
-
-IF DEF(_GREEN)
-DefaultNamesPlayer:
-	db   "NEW NAME"
-	next "GREEN"
-	next "ASH"
-	next "JACK"
-	db   "@"
-
-DefaultNamesRival:
-	db   "NEW NAME"
-	next "RED"
-	next "GARY"
-	next "JOHN"
-	db   "@"
-ENDC
-
-IF DEF(_BLUE)
-DefaultNamesPlayer:
-	db   "NEW NAME"
-	next "BLUE"
-	next "ASH"
-	next "JACK"
-	db   "@"
-
-DefaultNamesRival:
-	db   "NEW NAME"
-	next "GREEN"
-	next "GARY"
-	next "JOHN"
-	db   "@"
-ENDC
 
 GetDefaultName:
 ; a = name index
@@ -259,44 +250,21 @@ GetDefaultName:
 	ld bc, $14
 	jp CopyData
 
-IF DEF(_RED)
 DefaultNamesPlayerList:
 	db "NEW NAME@"
 	db "RED@"
 	db "ASH@"
 	db "JACK@"
+DefaultNamesGirl:
+	db "NEW NAME@"
+	db "GREEN@"
+	db "LEAF@"
+	db "JILL@"
 DefaultNamesRivalList:
 	db "NEW NAME@"
 	db "BLUE@"
 	db "GARY@"
 	db "JOHN@"
-ENDC
-
-IF DEF(_GREEN)
-DefaultNamesPlayerList:
-	db "NEW NAME@"
-	db "GREEN@"
-	db "ASH@"
-	db "JACK@"
-DefaultNamesRivalList:
-	db "NEW NAME@"
-	db "RED@"
-	db "GARY@"
-	db "JOHN@"
-ENDC
-
-IF DEF(_BLUE)
-DefaultNamesPlayerList:
-	db "NEW NAME@"
-	db "BLUE@"
-	db "ASH@"
-	db "JACK@"
-DefaultNamesRivalList:
-	db "NEW NAME@"
-	db "GREEN@"
-	db "GARY@"
-	db "JOHN@"
-ENDC
 
 TextTerminator_6b20:
 	db "@"
