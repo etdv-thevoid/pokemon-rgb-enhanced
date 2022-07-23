@@ -6,20 +6,18 @@ on:
       - main
     paths-ignore:
       - 'docs/**'
-      - '.github/**'
       - '**.md'
   pull_request:
     branches:
       - main
     paths-ignore:
       - 'docs/**'
-      - '.github/**'
       - '**.md'
   workflow_call:
 
 jobs:
   build-ubuntu:
-    name: "Build Ubuntu"
+    name: "Build"
     runs-on: ubuntu-latest
     steps:
       # CHECKOUT REPOSITORY
@@ -54,10 +52,18 @@ jobs:
           popd
 
       # BUILD ROMS
-      - id: make
-        name: "Build .gbc ROM files"
+      - id: make-red
+        name: "Build pokered.gbc"
         run: |
-          make -j$(nproc)
+          make red -j$(nproc)
+      - id: make-green
+        name: "Build pokegreen.gbc"
+        run: |
+          make green -j$(nproc)
+      - id: make-blue
+        name: "Build pokeblue.gbc"
+        run: |
+          make blue -j$(nproc)
       - id: rename
         name: "Rename .gbc files with commit hash"
         run: |
