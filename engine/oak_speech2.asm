@@ -255,7 +255,7 @@ DefaultNamesPlayerList:
 	db "RED@"
 	db "ASH@"
 	db "JACK@"
-DefaultNamesGirl:
+DefaultNamesGirlList:
 	db "NEW NAME@"
 	db "GREEN@"
 	db "LEAF@"
