@@ -167,6 +167,8 @@ SnorlaxSprite:         INCBIN "gfx/sprites/snorlax.2bpp"
 OldAmberSprite:        INCBIN "gfx/sprites/old_amber.2bpp"
 LyingOldManSprite:     INCBIN "gfx/sprites/lying_old_man.2bpp"
 SwimmerFSprite:        INCBIN "gfx/sprites/swimmer_f.2bpp"
+SeelSprite:           INCBIN "gfx/sprites/seel.2bpp"
+ClefairySprite:       INCBIN "gfx/sprites/clefairy.2bpp"
 
 
 SECTION "Graphics", ROMX, BANK[GFX]
@@ -175,12 +177,12 @@ PokemonLogoGraphics:            INCBIN "gfx/gs/new_pokemon_logo.2bpp"
 FontGraphics:                   INCBIN "gfx/gs/font.1bpp"
 FontGraphicsEnd:
 ABTiles:                        INCBIN "gfx/AB.2bpp"
-HpBarAndStatusGraphics:  INCBIN "gfx/gs/gen2_hp_bar_and_status.2bpp"
+HpBarAndStatusGraphics:         INCBIN "gfx/gs/gen2_hp_bar_and_status.2bpp"
 HpBarAndStatusGraphicsEnd:
-BattleHudTiles1:         INCBIN "gfx/gs/gen2_battle_arrow.1bpp"
+BattleHudTiles1:                INCBIN "gfx/gs/gen2_battle_arrow.1bpp"
 BattleHudTiles1End:
-BattleHudTiles2:         INCBIN "gfx/gs/gen2_battle_arrow_lines.1bpp"
-BattleHudTiles3:         INCBIN "gfx/gs/gen2_battle_arrow_more_lines.1bpp"
+BattleHudTiles2:                INCBIN "gfx/gs/gen2_battle_arrow_lines.1bpp"
+BattleHudTiles3:                INCBIN "gfx/gs/gen2_battle_arrow_more_lines.1bpp"
 BattleHudTiles3End:
 NintendoCopyrightLogoGraphics:  INCBIN "gfx/copyright.2bpp"
 GamefreakLogoGraphics:          INCBIN "gfx/gamefreak.2bpp"
@@ -230,6 +232,8 @@ SECTION "NPC Sprites 2", ROMX, BANK[NPC_SPRITES_2]
 
 RedCyclingSprite:     INCBIN "gfx/sprites/cycling.2bpp"
 RedSprite:            INCBIN "gfx/sprites/red.2bpp"
+GreenCyclingSprite:   INCBIN "gfx/sprites/cycling_green.2bpp"
+GreenSprite:          INCBIN "gfx/sprites/green.2bpp"
 BlueSprite:           INCBIN "gfx/sprites/blue.2bpp"
 OakSprite:            INCBIN "gfx/sprites/oak.2bpp"
 BugCatcherSprite:     INCBIN "gfx/sprites/bug_catcher.2bpp"
@@ -263,11 +267,9 @@ MomSprite:            INCBIN "gfx/sprites/mom.2bpp"
 BaldingGuySprite:     INCBIN "gfx/sprites/balding_guy.2bpp"
 YoungBoySprite:       INCBIN "gfx/sprites/young_boy.2bpp"
 GameboyKidSprite:     INCBIN "gfx/sprites/gameboy_kid.2bpp"
-ClefairySprite:       INCBIN "gfx/sprites/clefairy.2bpp"
 AgathaSprite:         INCBIN "gfx/sprites/agatha.2bpp"
 BrunoSprite:          INCBIN "gfx/sprites/bruno.2bpp"
 LoreleiSprite:        INCBIN "gfx/sprites/lorelei.2bpp"
-SeelSprite:           INCBIN "gfx/sprites/seel.2bpp"
 
 
 SECTION "Battle (bank 5)", ROMX, BANK[$5]
@@ -1890,6 +1892,9 @@ RedFishingTilesFront: INCBIN "gfx/red_fishing_tile_front.2bpp"
 RedFishingTilesBack:  INCBIN "gfx/red_fishing_tile_back.2bpp"
 RedFishingTilesSide:  INCBIN "gfx/red_fishing_tile_side.2bpp"
 RedFishingRodTiles:   INCBIN "gfx/red_fishingrod_tiles.2bpp"
+GreenFishingTilesFront: INCBIN "gfx/green_fishing_tile_front.2bpp"
+GreenFishingTilesBack:  INCBIN "gfx/green_fishing_tile_back.2bpp"
+GreenFishingTilesSide:  INCBIN "gfx/green_fishing_tile_side.2bpp"
 
 INCLUDE "data/animations.asm"
 
@@ -2187,11 +2192,11 @@ MarowakPicBack:      INCBIN "gfx/gs/mon/marowakb.pic"
 LeafeonPicFront::    INCBIN "gfx/gs/mon/leafeon.pic"
 LeafeonPicBack::     INCBIN "gfx/gs/mon/leafeonb.pic"
 
-BillSprite:     		 INCBIN "gfx/sprites/bill.2bpp"
-BlaineSprite:     	 INCBIN "gfx/sprites/blaine.2bpp"
+BillSprite:          INCBIN "gfx/sprites/bill.2bpp"
+BlaineSprite:        INCBIN "gfx/sprites/blaine.2bpp"
 BrockSprite:         INCBIN "gfx/sprites/brock.2bpp"
-KogaSprite:     		 INCBIN "gfx/sprites/koga.2bpp"
-MistySprite:     		 INCBIN "gfx/sprites/misty.2bpp"
+KogaSprite:          INCBIN "gfx/sprites/koga.2bpp"
+MistySprite:         INCBIN "gfx/sprites/misty.2bpp"
 SabrinaSprite:       INCBIN "gfx/sprites/sabrina.2bpp"
 SurgeSprite:         INCBIN "gfx/sprites/surge.2bpp"
 RocketFSprite:       INCBIN "gfx/sprites/rocket_f.2bpp"
