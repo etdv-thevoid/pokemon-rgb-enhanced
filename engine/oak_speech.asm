@@ -208,8 +208,8 @@ OakSpeechText3:
 	TX_FAR _OakSpeechText3
 	db "@"
 BoyGirlText:
-    text_far _BoyGirlText
-    text_end
+    TX_FAR _BoyGirlText
+    db "@"
 
 FadeInIntroPic:
 	ld hl,IntroFadePalettes

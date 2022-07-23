@@ -58,4 +58,4 @@ _OakSpeechText3::
 _BoyGirlText::
     text "Are you a boy,"
     line "or a girl?"
-    done
+    prompt
