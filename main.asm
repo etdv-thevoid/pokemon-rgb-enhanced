@@ -1879,6 +1879,8 @@ INCLUDE "engine/menu/league_pc.asm"
 
 INCLUDE "engine/overworld/hidden_items.asm"
 
+INCLUDE "engine/overworld/elevator.asm"
+
 
 SECTION "bank1E",ROMX,BANK[$1E]
 
@@ -1899,8 +1901,6 @@ GreenFishingTilesSide:  INCBIN "gfx/green_fishing_tile_side.2bpp"
 INCLUDE "data/animations.asm"
 
 INCLUDE "engine/evolution.asm"
-
-INCLUDE "engine/overworld/elevator.asm"
 
 INCLUDE "color/animations.asm"
 
