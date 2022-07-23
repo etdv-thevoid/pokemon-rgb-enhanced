@@ -203,10 +203,8 @@ INCLUDE "engine/overworld/is_player_just_outside_map.asm"
 INCLUDE "engine/menu/status_screen.asm"
 INCLUDE "engine/menu/party_menu.asm"
 
-RedPicFront:: INCBIN "gfx/gs/trainer/red.pic"
-rept 11 ; Padding
-	db 0
-endr
+RedPicFront::   INCBIN "gfx/gs/trainer/red.pic"
+GreenPicFront:: INCBIN "gfx/gs/trainer/green.pic"
 
 ShrinkPic1::  INCBIN "gfx/other/shrink1.pic"
 ShrinkPic2::  INCBIN "gfx/other/shrink2.pic"
@@ -603,6 +601,7 @@ PidgeotPicBack:     INCBIN "gfx/gs/mon/pidgeotb.pic"
 StarmiePicFront:    INCBIN "gfx/gs/mon/starmie.pic"
 StarmiePicBack:     INCBIN "gfx/gs/mon/starmieb.pic"
 RedPicBack:         INCBIN "gfx/gs/trainer/redb.pic"
+GreenPicBack:       INCBIN "gfx/gs/trainer/greenb.pic"
 OldManPic:          INCBIN "gfx/gs/trainer/oldman.pic"
 
 GastlyPicFront:     INCBIN "gfx/gs/mon/gastly.pic"
