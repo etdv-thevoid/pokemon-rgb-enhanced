@@ -43,6 +43,8 @@ jobs:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: ${{ github.event.inputs.tag }}
           title: ${{ github.event.inputs.tag }}
+          body: |
+            This is a manual release
           prerelease: false
           files: |
             roms.zip
